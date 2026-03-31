@@ -9,6 +9,6 @@ Projekt slúži ako ukážka prepojenia backendovej logiky (JPA, služby) s mode
 - Spring Boot 3
 - Spring Data JPA
 - PostgreSQL
-- Vaadin Flow 24
+- Vaadin 24
 - Maven
 - Git & GitHub
