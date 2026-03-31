@@ -29,11 +29,9 @@ public class MovieListView extends VerticalLayout {
     public MovieListView(MovieService movieService) {
         this.movieService = movieService;
 
-        // ===== FORM =====
         form = new MovieForm(movieService, v -> refreshGrid());
         form.setVisible(false);
 
-        // ===== GRID =====
         grid.addColumn(MovieDto::getName)
                 .setHeader("Movie Name")
                 .setSortable(true)
@@ -61,7 +59,6 @@ public class MovieListView extends VerticalLayout {
             }
         });
 
-        // ===== FILTER =====
         TextField filterField = new TextField();
         filterField.setPlaceholder("Filter by movie name...");
         filterField.addValueChangeListener(e -> {
@@ -72,7 +69,6 @@ public class MovieListView extends VerticalLayout {
             }
         });
 
-        // ===== BUTTONS =====
         Button addNew = new Button("Add New Movie", e -> {
             grid.asSingleSelect().clear();
             form.setMovie(null);
@@ -99,13 +95,11 @@ public class MovieListView extends VerticalLayout {
 
         HorizontalLayout actions = new HorizontalLayout(addNew, delete, filterField);
 
-        // ===== SPLIT LAYOUT =====
         SplitLayout split = new SplitLayout();
         split.addToPrimary(grid);
         split.addToSecondary(form);
         split.setSizeFull();
 
-        // ===== LAYOUT =====
         add(actions, split);
         setSizeFull();
 

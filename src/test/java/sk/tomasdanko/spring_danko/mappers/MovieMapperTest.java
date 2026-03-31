@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class MovieMapperTest {
 
     @Test
-    public void movieTodMovieDtoIsSame(){
+    public void movieTodMovieDtoIsSame() {
         Movie movie = new Movie();
         movie.setName("Dracula");
         movie.setId(1L);
@@ -21,12 +21,11 @@ class MovieMapperTest {
         set.add("Danko");
 
         MovieDto movieDto = MovieMapper.INSTANCE.movieToMovieDto(movie);
-        assertEquals(movie.getId(),movieDto.getId());
-        assertEquals(movie.getName(),movieDto.getName());
+        assertEquals(movie.getId(), movieDto.getId());
+        assertEquals(movie.getName(), movieDto.getName());
         assertArrayEquals(movie.getDirectors().toArray(),
                 movieDto.getDirectorsOfTheMovie().toArray());
     }
-
 
 
 }

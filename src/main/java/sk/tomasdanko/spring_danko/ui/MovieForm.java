@@ -19,7 +19,7 @@ public class MovieForm extends FormLayout {
 
     private MovieService movieService;
     private MovieDto movie;
-    private Consumer<Void> refreshCallback; // volanie po uložení
+    private Consumer<Void> refreshCallback;
 
     public MovieForm(MovieService movieService, Consumer<Void> refreshCallback) {
         this.movieService = movieService;
@@ -54,7 +54,7 @@ public class MovieForm extends FormLayout {
         Notification.show("Movie saved", 2000, Notification.Position.BOTTOM_START);
 
         clearForm();
-        refreshCallback.accept(null); // obnov Grid
+        refreshCallback.accept(null);
     }
 
     public void clearForm() {

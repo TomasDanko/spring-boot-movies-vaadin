@@ -18,7 +18,8 @@ public class Movie {
     private String name;
 
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER
-    )    @JoinTable(name = "movie_director", joinColumns = @JoinColumn(name = "movie_id"),
+    )
+    @JoinTable(name = "movie_director", joinColumns = @JoinColumn(name = "movie_id"),
             inverseJoinColumns = @JoinColumn(name = "director_id")
     )
     private Set<Director> directors = new HashSet<>();

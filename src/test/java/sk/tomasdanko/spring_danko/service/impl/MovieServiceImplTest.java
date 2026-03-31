@@ -25,10 +25,9 @@ class MovieServiceImplTest {
     MovieService movieService;
 
 
-
     @Test
     @Transactional
-    public void getMovieById(){
+    public void getMovieById() {
         Movie movie = new Movie();
         movie.setName(JAMES_BOND);
         movie.setId(1L);
@@ -45,7 +44,7 @@ class MovieServiceImplTest {
 
     @Test
     @Transactional
-    public void moviesFromServicesAreSame(){
+    public void moviesFromServicesAreSame() {
         Movie movie = new Movie();
         movie.setName(JAMES_BOND);
         movie.setId(1L);
@@ -70,7 +69,7 @@ class MovieServiceImplTest {
 
     @Test
     @Transactional
-    public void movieFromDbIsBond(){
+    public void movieFromDbIsBond() {
         List<MovieDto> movieDto = movieService.findByName(JAMES_BOND);
         assertEquals(movieDto.get(0).getName(), JAMES_BOND);
         assertEquals(movieDto.get(1).getName(), JAMES_BOND);
