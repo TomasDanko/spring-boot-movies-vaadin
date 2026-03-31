@@ -1,2 +1,14 @@
 /mvnw text eol=lf
 *.cmd text eol=crlf
+
+# ===============================
+# GitHub Linguist configuration
+# ===============================
+
+# Ignore generated frontend / build files
+frontend/** linguist-vendored
+node_modules/** linguist-vendored
+target/** linguist-vendored
+
+# Treat Java as main language
+*.java linguist-language=Java
